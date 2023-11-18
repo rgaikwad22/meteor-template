@@ -1,0 +1,1250 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf { zoom: 1; }
+
+/* 1.3. Font class declaration
+   ========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*for all*/
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.icon {
+  width: 8px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+  text-indent: -9999px;
+}
+
+.icon::before {
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+
+.sectiob-heading {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.h-line {
+  width: 49px;
+  height: 7px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 50px;
+}
+
+/*for wrapper*/
+.wrapper {
+  width: 65.66%;
+  max-width: 856px;
+  margin: 0px auto;
+}
+
+/*=================================
+  Header styling starts here
+=================================*/
+
+.header-container {
+  width: 100%;
+  padding: 16px 0;
+  position: fixed;
+  z-index: 1;
+  text-align: center;
+}
+
+.logo { text-align: initial; }
+.header-container img { width: 75%; }
+
+.header-container .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav-links li a {
+  color: #fff;
+  font-size: 11px;
+}
+
+.header-nav-links li:not(:last-child) { margin-right: 35px; }
+
+/*=================================
+  Header styling ends here
+=================================*/
+
+/*=================================
+  banner styling starts here
+=================================*/
+
+.banner-section {
+  min-height: 510px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.banner-section figure {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.banner-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-info span {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.banner-info h1 {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.banner-info p {
+  width: 47%;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.banner-info a {
+  padding: 10px 12px;
+  border-radius: 34px;
+  margin-top: 12px;
+  background-color: #A2CE91;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hamberger-icon::before {
+  color: #fff;
+  content: "\f0c9";
+}
+
+.hamberger-icon { display: none; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+/*=================================
+  banner styling ends here
+=================================*/
+
+/*=================================
+  about us styling satrts here
+=================================*/
+
+.aboutus-top {
+  padding: 60px 0;
+  background-color: #F4F4F4;
+}
+
+.aboutus-top .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 23%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-details li:not(:last-child) { margin-right: 20px; }
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card p {
+  color: #908976;
+  font-size: 10px;
+  line-height: 17px;
+  text-align: center;
+}
+
+.pen-icon,
+.bulb-icon,
+.money-icon,
+.sound-icon { margin-bottom: 10px; }
+
+.pen-icon::before {
+  color: #A2CE91;
+  font-size: 20px;
+  content: "\f303";
+}
+
+.bulb-icon::before {
+  color: #A2CE91;
+  font-size: 22px;
+  content: "\f0eb";
+}
+
+.money-icon::before {
+  color: #A2CE91;
+  font-size: 20px;
+  content: "\f53b";
+}
+
+.sound-icon::before {
+  color: #A2CE91;
+  font-size: 20px;
+  content: "\f0a1";
+}
+
+/* about us bottoom styling here */
+
+.aboutus-bottom {
+  min-height: 425px;
+  position: relative;
+}
+
+.aboutus-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
+
+.aboutus-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offers {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.offer-dis {
+  margin-bottom: 70px;
+  flex-basis: 55%;
+}
+
+.offer-dis h4 {
+  margin-bottom: 20px;
+  width: 53%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.offer-dis p {
+  margin-bottom: 20px;
+  width: 95%;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.food-img { flex-basis: 46%; }
+.food-img img { width: 100%; }
+
+.discover-btn {
+  padding: 10px 13px;
+  border-radius: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  font-size: 9px;
+}
+
+.purchase-btn {
+  padding: 10px 13px;
+  border-radius: 30px;
+  display: inline-block;
+  background-color: #A2CE91;
+  color: #fff;
+  font-size: 9px;
+}
+
+/*=================================
+  about us styling ends here
+=================================*/
+
+
+/*=================================
+  portfolio styling starts here
+=================================*/
+
+.portfolio-section { padding: 60px 0; }
+
+.portfolio-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-category-list .active-category a { color: #A2CE91; }
+
+.portfolio-category-list { margin-bottom: 40px; }
+
+.portfolio-category-list li a {
+  color: #908976;
+  font-size: 12px;
+}
+
+.portfolio-category-list li:not(:last-child) { margin-right: 10px; }
+
+.portfolio-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-images li {
+  margin-bottom: 22px;
+  flex-basis: 25%;
+}
+
+.portfolio-images li:nth-child(n+5) { margin: 0; }
+.portfolio-img { width: 90%; }
+ 
+/*=================================
+  portfolio styling ends here
+=================================*/
+
+/*=================================
+  blog styling starts here
+=================================*/
+
+.blog-section-top {
+  min-height: 535px;
+  position: relative;
+}
+
+.blog-section-top .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-background-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
+
+.blog-background-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-section-top h2 {
+  margin-top: 72px;
+  color: #fff;
+}
+
+.white-line {
+  width: 49px;
+  height: 7px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 50px;
+}
+
+.blogs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.food-blog {
+  width: 48.8%;
+  display: flex;
+  position: relative;
+}
+
+.other-blogs {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.workspace-blog,
+.carashed-palne-blog { position: relative; }
+.food-blog img { width: 100%; }
+.workspace-blog img { width: 100%; }
+.carashed-palne-blog img { width: 100%; }
+
+.blog-details {
+  width: 100%;
+  padding: 15px 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: #0f141b;
+  color: #fff;
+  opacity: .7;
+}
+
+.blog-details h5 {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.blog-details span {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.blog-section-bottom { padding: 60px 0; }
+
+.blog-details-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-details-list li:not(:last-child) { margin-right: 20px; }
+
+.blog-card {
+  padding: 30px 40px;
+  flex-basis: 23%;
+  background-color: #F4F4F4;
+  color: #908976;
+  font-size: 12px;
+  text-align: center;
+}
+
+.blog-card span {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #A2CE91;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/*=================================
+  blog styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/
+
+.footer-top {
+  min-height: 429px;
+  position: relative;
+}
+
+.footer-top .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-bg-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
+
+.footer-bg-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer-top h2 {
+  margin-top: 72px;
+  color: #fff;
+}
+
+.contact-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-us figure img { width: 100%; }
+
+.contact-us figure {
+  width: 50%;
+  flex-basis: 49%;
+}
+
+.contact-form {
+  width: 50%;
+  flex-basis: 48%;
+}
+
+.name-email-inputs {
+  margin-bottom: 19px;
+  display: flex;
+}
+
+.input-grp input {
+  width: 100%;
+  height: 35px;
+  border: none;
+  background-color: #3a3d3f;
+  color: #fff;
+  font-size: 9px;
+  opacity: .6;
+}
+
+.input-grp { width: 100%; }
+.input { margin-right: 20px; }
+::placeholder { color: #fff; }
+
+.input-grp textarea {
+  width: 100%;
+  height: 110px;
+  border: none;
+  background-color: #3a3d3f;
+  color: #fff;
+  font-size: 9px;
+  opacity: .6;
+}
+
+.submit-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px;
+  margin-top: 19px;
+  background-color: #A2CE91;
+  color: #fff;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  padding: 25px 0;
+  background-color: #202527;
+}
+
+.footer-bottom .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-bottom p {
+  color: #fff;
+  font-size: 10px;
+}
+
+.toolplate {
+  color: #B73E4D;
+  font-weight: 700;
+}
+
+.social-media-icons li:not(:last-child) { margin-right: 5px; }
+
+.facebook,
+.twitter,
+.linked-in,
+.rfi,
+.web {
+  width: 20px;
+  height: 20px;
+}
+
+.facebook::before {
+  padding: 4px 6px;
+  color: #222025;
+  font-size: 12px;
+  content: "\f39e";
+}
+
+.twitter::before {
+  padding: 4px 4px;
+  color: #222025;
+  font-size: 12px;
+  content: "\f099";
+}
+
+.linked-in::before {
+  padding: 4px 5px;
+  color: #222025;
+  font-size: 12px;
+  content: "\f0e1";
+}
+
+.rfi::before {
+  padding: 4px 3px;
+  color: #222025;
+  font-size: 12px;
+  content: "\e012";
+}
+
+.web::before {
+  padding: 4px 4px;
+  color: #222025;
+  font-size: 12px;
+  content: "\f0ac";
+}
+
+.icon-bg {
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #A2CE91;
+}
+
+/*=================================
+  footer styling ends here
+=================================*/
+
+
+/*=================================
+  media query for 995 above starts here
+=================================*/
+
+@media only screen and (min-width: 995px) {
+  .header-nav-links li a:hover { color: #A2CE91; }
+
+  .facebook:hover:before,
+  .twitter:hover:before,
+  .linked-in:hover:before,
+  .rfi:hover:before,
+  .web:hover:before,
+  .toolplate:hover {
+    color: #A2CE91;
+    transition: .8s;
+  }
+
+  .banner-info a:hover {
+    background-color: #fff;
+    color: #A2CE91;
+    transition: .8s;
+  }
+
+  .discover-btn:hover {
+    background-color: #A2CE91;
+    color: #fff;
+    transition: .8s;
+  }
+
+  .purchase-btn:hover,
+  .submit-btn:hover {
+    background-color: #fff;
+    color: #A2CE91;
+    transition: .8s;
+  }
+
+  .portfolio-category-list li a:hover { color: #A2CE91; }
+
+  .icon-bg:hover {
+    background-color: #fff;
+    transition: .8s;
+  }
+}
+
+/*=================================
+  media query for 995 above ends here
+=================================*/
+
+@media only screen and (max-width: 1141px) {
+  .blog-details-list li:last-child { margin-top: 20px; }
+}
+
+/*=================================
+  media query for 995 starts here
+=================================*/
+
+@media only screen and (max-width: 995px) {
+  .card { flex-basis: 47%; }
+
+  .card-details li:not(:last-child),
+  .card-details li:last-child { margin-bottom: 20px; }
+
+  .card-details li:nth-child(2) { margin-right: 0; }
+
+  .offer-dis { margin-bottom: 70px; }
+
+  .portfolio-images li { flex-basis: 26%; }
+
+  .portfolio-images { justify-content: center; }
+
+  .blog-section-top h2 { margin-top: 60px; }
+
+  .blog-section-top { min-height: 480px; }
+
+  .blog-details { padding: 7px 8px; }
+
+  .blog-details h5 { font-size: 11px; }
+
+  .blog-details span { font-size: 9px; }
+
+  .blog-card { flex-basis: 47%; }
+
+  .blog-details-list { justify-content: center; }
+
+  .blog-details-list li:nth-child(3) { margin-top: 20px; }
+
+  .blog-details-list li:nth-child(2) { margin-right: 0; }
+
+  .footer-top h2 { margin-top: 60px; }
+}
+
+/*=================================
+  media query for 995 ends here
+=================================*/
+
+
+/*=================================
+  media query for 768 starts here
+=================================*/
+
+@media only screen and (max-width: 768px) {
+  .wrapper { width: 85.66%; }
+
+  .header-nav-links { display: none; }
+
+  .hamberger-icon {
+    width: 15px;
+    display: block;
+  }
+
+  .banner-info h1 { font-size: 23px; }
+
+  .aboutus-top { padding: 40px 0; }
+
+  .h-line { margin-bottom: 40px; }
+
+  .card-details li:nth-child(3) { margin-bottom: 0; }
+
+  .card-details li:last-child { margin-bottom: 0; }
+
+  .offers { padding-top: 40px; }
+
+  .offer-dis { margin-bottom: 40px; }
+
+  .portfolio-section { padding: 40px 0; }
+
+  .portfolio-images li { flex-basis: 41%; }
+
+  .portfolio-images li:nth-child(n+5) { margin-bottom: 22px; }
+
+  .portfolio-images li:nth-child(n+7) { margin-bottom: 0; }
+
+  .blog-section-top { min-height: 450px; }
+
+  .blogs { flex-wrap: wrap; }
+  
+  .blog-section-top h2 { margin-top: 40px; }
+
+  .white-line { margin-bottom: 40px; }
+
+  .blog-section-bottom { padding: 40px 0; }
+
+  .footer-top h2 { margin-top: 40px; }
+
+}
+
+/*=================================
+  media query for 768 ends here
+=================================*/
+
+
+/*=================================
+  media query for 640 starts here
+=================================*/
+
+@media only screen and (max-width: 640px) {
+  .banner-info h1 { font-size: 20px; }
+
+  .card-details { flex-direction: column; }
+
+  .card-details li:not(:last-child) { margin-right: 0; }
+ 
+  .card-details li:nth-child(3) { margin-bottom: 20px; }
+
+  .offers {
+    padding-top: 30px;
+    flex-direction: column;
+  }
+
+  .offer-dis { margin-bottom: 20px; }
+
+  .offer-dis h4 {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .offer-dis p {
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .btn-container { text-align: center; }
+
+  .food-img {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .food-img img { width: 70%; }
+
+  .discover-btn,
+  .purchase-btn { font-weight: 600; }
+
+  .h-line,
+  .portfolio-category-list {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .portfolio-section { padding: 30px 0; }
+
+  .portfolio-img { width: 100%; }
+
+  .portfolio-images li:nth-child(7) { margin-bottom: 20px; }
+ 
+  .portfolio-images li:nth-child(1),
+  .portfolio-images li:nth-child(3),
+  .portfolio-images li:nth-child(5),
+  .portfolio-images li:nth-child(7) { margin-right: 20px; }
+
+  .blogs {
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-blog {
+    margin-bottom: 20px;
+    width: 70%;
+  }
+
+  .other-blogs { width: 70%; }
+
+  .workspace-blog { margin-bottom: 20px; }
+ 
+  .blog-section-top h2 { margin-top: 30px; }
+ 
+  .white-line { margin-bottom: 30px; }
+
+  .blog-details-list { flex-direction: column; }
+
+  .blog-details-list li:not(:last-child) { margin-right: 0; }
+
+  .blog-details-list li:first-child { margin-bottom: 20px; }
+
+  .blog-section-bottom { padding: 30px 0; }
+
+  .contact-us {
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-us figure {
+    margin-bottom: 20px;
+    width: 80%;
+  }
+
+  .contact-form { width: 80%; }
+
+  .footer-top h2 { margin-top: 30px; }
+
+  .footer-bottom .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .social-media-icons { text-align: center; }
+
+}
+
+/*=================================
+  media query for 640 ends here
+=================================*/
+
+
+/*=================================
+  media query for 480 starts here
+=================================*/
+
+@media only screen and (max-width: 480px) {
+  .banner-info h1 { font-size: 17px; }
+
+  .portfolio-images { flex-direction: column; }
+
+  .portfolio-images li:nth-child(1),
+  .portfolio-images li:nth-child(3),
+  .portfolio-images li:nth-child(5),
+  .portfolio-images li:nth-child(7) { margin-right: 0; }
+
+  .portfolio-images { align-items: center; }
+
+  .portfolio-images li a { text-align: center; }
+
+  .food-blog,
+  .other-blogs,
+  .portfolio-img { width: 80%; }
+
+  .contact-us figure,
+  .contact-form { width: 100%; }
+
+}
+
+/*=================================
+  media query for 480 ends here
+=================================*/
+
+/*=================================
+  media query for 375 starts here
+=================================*/
+
+@media only screen and (max-width: 375px) {
+
+  .banner-info h1 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .banner-info span {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .banner-info p {
+    width: 100%;
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .banner-info a {
+    margin-top: 9px;
+    font-size: 7px;
+  }
+
+  .aboutus-top { padding: 30px 0; }
+
+  .h-line { margin-bottom: 30px; }
+
+  .discover-btn,
+  .purchase-btn {
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  .food-blog { width: 100%; }
+
+  .other-blogs { width: 100%; }
+}
+
+/*=================================
+  media query for 375 ends here
+=================================*/
